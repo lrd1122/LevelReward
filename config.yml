@@ -1,0 +1,13 @@
+#前缀
+prefix: "LevelReward"
+#是否消耗等级
+LevelConsume: false
+#已经领过后再次申请领取的提示消息
+HasRewardMessage: "你已经领过啦"
+Rewards:
+  #100级奖励
+  100:
+    #以玩家的身份执行指令
+    - "player:say 我爱你"
+    #以op的身份执行指令
+    - "op:say 你是个好人"

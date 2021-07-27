@@ -1,0 +1,11 @@
+name: LevelReward
+version: 1.0
+author: lrd1122
+main: gx.lrd1122.LevelReward
+softdepend:
+  - PlaceholderAPI
+commands:
+  levelreward:
+    description: levelreward
+    aliases: lr
+    usage: /<command>
