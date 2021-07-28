@@ -6,7 +6,6 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import javax.swing.text.Document;
 import java.io.File;
 
 public class LevelReward extends JavaPlugin {
