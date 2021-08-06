@@ -7,6 +7,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
+import java.io.IOException;
 
 public class LevelReward extends JavaPlugin {
     public static YamlConfiguration playerdata;
@@ -21,7 +22,11 @@ public class LevelReward extends JavaPlugin {
             getLogger().info("玩家数据已成功加载");
         }
         else {
-            saveResource("playerdata.yml", true);
+            try {
+                playerdatafile.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             getLogger().info("载入玩家数据");
         }
         playerdata = YamlConfiguration.loadConfiguration(playerdatafile);
@@ -30,6 +35,7 @@ public class LevelReward extends JavaPlugin {
         } else {
             getLogger().info("PlaceholderAPI ×");
         }
+        Bukkit.getPluginManager().registerEvents(new LevelListener(), this);
         Bukkit.getPluginCommand("levelreward").setExecutor(new CommandListener());
         plugin = this;
         config = getConfig();
