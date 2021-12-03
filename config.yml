@@ -5,6 +5,8 @@ LevelConsume: false
 #已经领过后再次申请领取的提示消息
 HasRewardMessage: "你已经领过啦"
 NotFoundMessage: "没有找到该奖励"
+ReachedLevelMax: "你已经超过了等级"
+ReachedLevelMin: "你没有到等级"
 #达到等级自动领取奖励
 AutoReward: true
 Rewards:

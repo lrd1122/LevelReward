@@ -19,6 +19,16 @@ public class GetReward {
             int maxlevel = section.getInt("MaxLevel");
             int minlevel = section.getInt("MinLevel");
             List<String> getreward = section.getStringList("Commands");
+            if (player.getLevel() <= minlevel)
+            {
+                player.sendMessage(LevelReward.colorstring(LevelReward.config.getString("prefix") + LevelReward.config.getString("ReachedLevelMin")));
+                return;
+            }
+            if (player.getLevel() >= maxlevel)
+            {
+                player.sendMessage(LevelReward.colorstring(LevelReward.config.getString("prefix") + LevelReward.config.getString("ReachedLevelMax")));
+                return;
+            }
             if (player.getLevel() >= minlevel && player.getLevel() <= maxlevel) {
                 if (LevelReward.playerdata.get(player.getName()) == null) {
                     FileConfiguration playerdata = LevelReward.playerdata;
